@@ -8,8 +8,23 @@ authors = ["Cristian Alvarez H <cristian.alvarez@simetrik.com>"]
 python = "^3.8"
 Django = "^4.0.6"
 djangorestframework = "^3.13.1"
+django-environ = "^0.9.0"
+psycopg2-binary = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
+black = "^22.6.0"
+
+
+[tool.black]
+line-length = 88
+extend-exclude = """
+(
+    migrations 
+    | config
+    | manage.py
+)
+"""
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

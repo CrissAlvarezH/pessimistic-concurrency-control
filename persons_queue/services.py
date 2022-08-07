@@ -11,17 +11,11 @@ def add_person(person_name: str, queue_name: str) -> Person:
     Queue.objects.get_or_create(name=queue_name)
 
     with transaction.atomic():
-        queue = (
-            Queue.objects
-            .select_for_update()
-            .filter(name=queue_name)
-            .first()
-        )
+        queue = Queue.objects.select_for_update().filter(name=queue_name).first()
 
         last_position = 1
         last_person_in_queue = (
-            PersonInQueue.objects
-            .filter(queue_id=queue.id)
+            PersonInQueue.objects.filter(queue_id=queue.id)
             .order_by("-created_at")
             .first()
         )

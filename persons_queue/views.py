@@ -20,8 +20,7 @@ class QueueViewSet(
         queue_name = self.request.data.get("queue_name")
 
         if not person_name or not queue_name:
-            raise ValidationError(
-                "person_name and queue_name is required")
+            raise ValidationError("person_name and queue_name is required")
 
         person = add_person(person_name, queue_name)
 

@@ -72,7 +72,7 @@ Este test nos muestra que al correr la función `add_person_v1` en dos hilos gen
 una duplicidad en las posiciones, **lo cual es algo que no queremos.**
 
 
-## Opción 1. Thread safe
+## Opción 2. Thread safe
 
 Para este caso nos aseguramos de bloquear los registros de la base de datos que
 estamos usando para que otros hilos tengan que esperar hasta que se desbloquee para 
